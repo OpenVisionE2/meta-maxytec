@@ -37,6 +37,7 @@ PREFERRED_PROVIDER_virtual/enigma2-mediaservice ?= "enigma2-plugin-systemplugins
 
 MTD_ROOTFS = "mmcblk0p20"
 MTD_KERNEL = "mmcblk0p19"
+MTD_BLACK  = "mmcblk0"
 KERNEL_FILE = "uImage"
 ROOTFS_FILE = "rootfs.tar.bz2"
 
