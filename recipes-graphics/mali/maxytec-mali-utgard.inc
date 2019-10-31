@@ -7,7 +7,7 @@ MALIVER ?= "${@bb.utils.contains('TARGET_ARCH', 'aarch64', '64' , '', d)}"
 
 PROVIDES += " virtual/libgles2 virtual/libgles1 virtual/egl virtual/libgbm"
 RPROVIDES_${PN} = "virtual/libgles2 virtual/libgles1 virtual/egl virtual/libgbm libMali.so libmali.so libEGL.so.1.4 libEGL.so.1 libEGL.so libGLESv1_CM.so.1.1 libGLESv1_CM.so.1 libGLESv1_CM.so libGLESv2.so.2.0 libGLESv2.so.2 libGLESv2.so libgbm.so"
-DEPENDS = "libdrm mesa patchelf-native"
+DEPENDS = "libdrm mesa"
 
 SRC_URI = "http://source.mynonpublic.com/maxytec/maxytec-mali${MALIVER}-${HICHIPSET}-${SRCDATE}.zip"
 
