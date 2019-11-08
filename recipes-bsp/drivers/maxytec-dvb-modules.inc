@@ -1,4 +1,4 @@
-SUMMARY = "Hardware drivers for ${MACHINE_DRIVER}"
+SUMMARY = "Hardware drivers for ${MACHINE}"
 SECTION = "base"
 PRIORITY = "required"
 LICENSE = "CLOSED"
@@ -17,7 +17,7 @@ S = "${WORKDIR}"
 
 INHIBIT_PACKAGE_STRIP = "1"
 
-FILES_${PN} += "${sysconfdir}/modules-load.d/_${MACHINEBUILD}.conf /lib/modules/${KV}/extra"
+FILES_${PN} += "${sysconfdir}/modules-load.d/_${MACHINE}.conf /lib/modules/${KV}/extra"
 
 do_compile() {
 }
@@ -28,8 +28,8 @@ do_install() {
 	install -d ${D}/lib/modules/${KV}/extra
 	install -d ${D}/${sysconfdir}/modules-load.d
 	install -m 0755 ${S}/*.ko ${D}${base_libdir}/modules/${KV}/extra
-	for i in ${MACHINE_DRIVER}_1 ${MACHINE_DRIVER}_2 ${MACHINE_DRIVER}_3 ${MACHINE_DRIVER}_4; do
-		echo $i >> ${D}/${sysconfdir}/modules-load.d/_${MACHINEBUILD}.conf
+	for i in ${MACHINE}_1 ${MACHINE}_2 ${MACHINE}_3 ${MACHINE}_4; do
+		echo $i >> ${D}/${sysconfdir}/modules-load.d/_${MACHINE}.conf
 	done
 }
 
