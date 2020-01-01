@@ -1,4 +1,4 @@
-DISTRO_FEATURES_EXTRA = "opengl"
+DISTRO_FEATURES_append += "opengl"
 
 PREFERRED_PROVIDER_virtual/egl ?= "maxytec-mali-${HICHIPSET}"
 PREFERRED_PROVIDER_virtual/libgles1 ?= "maxytec-mali-${HICHIPSET}"

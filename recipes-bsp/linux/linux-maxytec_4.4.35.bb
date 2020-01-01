@@ -18,6 +18,8 @@ SRC_URI[sha256sum] = "ea4ba0433d252c18f38ff2f4dce4b70880e447e1cffdc2066d5a9b5f80
 SRC_URI = "http://source.mynonpublic.com/maxytec/linux-${PV}-${SRCDATE}-${ARCH}.tar.gz \
 	file://defconfig \
 	file://initramfs-subdirboot.cpio.gz;unpack=0 \
+	file://0002-log2-give-up-on-gcc-constant-optimizations.patch \
+	file://0003-dont-mark-register-as-const.patch \
 	file://0001-mmc-switch-1.8V.patch \
 	file://0001-remote.patch \
 	file://HauppaugeWinTV-dualHD.patch \
@@ -25,8 +27,6 @@ SRC_URI = "http://source.mynonpublic.com/maxytec/linux-${PV}-${SRCDATE}-${ARCH}.
 	file://dvb-usb-linux_4.4.179.patch \
 	file://wifi-linux_4.4.183.patch \
 	file://findkerneldevice.sh \
-	file://0002-log2-give-up-on-gcc-constant-optimizations.patch \
-	file://0003-dont-mark-register-as-const.patch \
 	"
 
 # By default, kernel.bbclass modifies package names to allow multiple kernels
