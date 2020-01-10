@@ -34,6 +34,7 @@ KERNEL_MODULE_AUTOLOAD += "mali"
 PREFERRED_PROVIDER_virtual/kernel = "linux-maxytec"
 PREFERRED_VERSION_linux-maxytec = "4.4.35"
 PREFERRED_PROVIDER_virtual/enigma2-mediaservice ?= "enigma2-plugin-systemplugins-servicehisilicon"
+PREFERRED_VERSION_ffmpeg = "3.4.2"
 
 MTD_ROOTFS = "mmcblk0p20"
 MTD_KERNEL = "mmcblk0p19"
