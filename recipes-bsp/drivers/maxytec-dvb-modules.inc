@@ -62,4 +62,3 @@ do_package_qa() {
 
 FILES_${PN} += " ${bindir} ${sysconfdir}/init.d"
 
-INSANE_SKIP_${PN} += "already-stripped ldflags"
