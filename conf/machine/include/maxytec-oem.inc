@@ -23,7 +23,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 include conf/machine/include/autoload-filesystems.inc
 require conf/machine/include/soc-family.inc
 
-MACHINE_FEATURES += "3dtv alsa hdmicec switchoff HDMI hisil-3798mv200 mali emmc multitranscoding himedia blindscan-dvbs dvb-c adwol fastboot"
+MACHINE_FEATURES += "3dtv alsa hdmicec switchoff hisil-3798mv200 mali emmc multitranscoding himedia blindscan-dvbs dvb-c adwol fastboot hisil"
 
 SOC_FAMILY = "hisi3798mv200"
 HICHIPSET = "3798mv200"
