@@ -3,13 +3,12 @@ SECTION = "base"
 PRIORITY = "required"
 LICENSE = "CLOSED"
 require conf/license/license-close.inc
-MODULESVER ?= "${@bb.utils.contains('TARGET_ARCH', 'aarch64', '64' , '', d)}"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 PV = "${KV}+${SRCDATE}"
 
-SRC_URI = "http://source.mynonpublic.com/maxytec/${MACHINE}-drivers${MODULESVER}-${KV}-${SRCDATE}.zip"
+SRC_URI = "http://source.mynonpublic.com/maxytec/${MACHINE}-drivers-${KV}-${SRCDATE}.zip"
 
 SRC_URI_append = " file://suspend.sh"
 
