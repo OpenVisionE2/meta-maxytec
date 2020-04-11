@@ -80,7 +80,6 @@ IMAGE_CMD_maxytecfastboot8gb_append = " \
     echo "When you enter the recovery menu then it will force to install the image ${IMAGE_NAME}_usb.zip in the linux1 selection" >> ${DEPLOY_DIR_IMAGE}/${MACHINE}/${IMAGEDIR}/force_${MACHINE}_READ.ME; \
     cd ${DEPLOY_DIR_IMAGE}/${MACHINE}; \
     zip -r ../${IMAGE_NAME}_mmc.zip *; \
-    rm -f ${DEPLOY_DIR_IMAGE}/*.manifest; \
     cd ..; \
     rm -Rf ${DEPLOY_DIR_IMAGE}/${MACHINE}; \
     "
