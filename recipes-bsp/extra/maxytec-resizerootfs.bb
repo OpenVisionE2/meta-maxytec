@@ -1,4 +1,4 @@
-DESCRIPTION = "Resize Rootfs"
+DESCRIPTION = "MaxyTec resize rootfs"
 require conf/license/license-gplv2.inc
 
 COMPATIBLE_MACHINE = "^(multibox|v8plus)$"
