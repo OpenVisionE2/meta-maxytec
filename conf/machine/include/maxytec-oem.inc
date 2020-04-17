@@ -1,5 +1,5 @@
 # We know about rtc
-require conf/machine/include/build-extras.inc
+MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 
 BOX_BRAND = "maxytec"
 
@@ -20,7 +20,8 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     maxytec-dvb-modules-${MACHINE} \
     "
 
-require conf/machine/include/autoload-filesystems.inc
+KERNEL_MODULE_AUTOLOAD += "xfs"
+
 require conf/machine/include/soc-family.inc
 
 MACHINE_FEATURES += "3dtv alsa hdmicec switchoff hisil-3798mv200 mali emmc multitranscoding himedia blindscan-dvbs dvb-c adwol fastboot hisil"
