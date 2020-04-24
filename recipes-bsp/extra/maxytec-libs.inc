@@ -5,6 +5,10 @@ LICENSE = "CLOSED"
 DEPENDS = "zlib libpng freetype curl libxml2 libjpeg-turbo harfbuzz"
 RDEPENDS_${PN} = "libbluray"
 
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
+PR = "${SRCDATE}"
+
 SRC_URI = "http://source.mynonpublic.com/maxytec/maxytec-libs-${HICHIPSET}-${SRCDATE}.zip"
 
 S = "${WORKDIR}"
