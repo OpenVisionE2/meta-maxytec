@@ -7,7 +7,6 @@ DVBPROVIDER = "kernel"
 DVBSKYPROVIDER = "kernel"
 
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "\
-    kernel-module-cdfs \
     ${@bb.utils.contains('MACHINE_FEATURES', 'emmc', 'maxytec-resizerootfs' , '', d)} \
     ${@bb.utils.contains('MACHINE_FEATURES', 'adwol', 'maxytec-ethwol' , '', d)} \
     "
