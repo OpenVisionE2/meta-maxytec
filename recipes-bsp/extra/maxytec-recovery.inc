@@ -7,7 +7,9 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit deploy
 
-SRC_URI = "http://source.mynonpublic.com/maxytec/${MACHINE}-recovery-${SRCDATE}.zip"
+DOWNLOADMACHINE = "${MACHINE}"
+
+SRC_URI = "http://downloads.mutant-digital.net/maxytec/${DOWNLOADMACHINE}/${DOWNLOADMACHINE}-recovery-${SRCDATE}.zip"
 
 S = "${WORKDIR}"
 

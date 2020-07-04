@@ -7,7 +7,7 @@ DVBPROVIDER = "kernel"
 DVBSKYPROVIDER = "kernel"
 
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "\
-    ${@bb.utils.contains('MACHINE_FEATURES', 'emmc', 'maxytec-resizerootfs' , '', d)} \
+    ${@bb.utils.contains('MACHINE_FEATURES', 'emmc', 'maxytec-resizerootfs partitions-by-name' , '', d)} \
     ${@bb.utils.contains('MACHINE_FEATURES', 'adwol', 'maxytec-ethwol' , '', d)} \
     "
 
@@ -27,13 +27,12 @@ MACHINE_FEATURES += "3dtv alsa hdmicec switchoff hisil-3798mv200 mali emmc multi
 
 SOC_FAMILY = "hisi3798mv200"
 HICHIPSET = "3798mv200"
+RCTYPE = "0"
 
 MTD_ROOTFS = "mmcblk0p21"
 MTD_KERNEL = "mmcblk0p20"
 KERNEL_FILE = "uImage"
 ROOTFS_FILE = "rootfs.tar.bz2"
-
-IMAGE_FSTYPES += " maxytecfastboot8gb"
 
 EXTRA_OECONF_append_pn-enigma2 += " --with-alphablendingacceleration=always --with-blitaccelerationthreshold=250  --with-fillaccelerationthreshold=190000"
 

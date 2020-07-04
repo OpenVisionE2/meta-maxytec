@@ -6,9 +6,13 @@ require conf/license/license-close.inc
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
+KV = "4.4.35"
+
 PV = "${KV}+${SRCDATE}"
 
-SRC_URI = "http://source.mynonpublic.com/maxytec/${MACHINE}-drivers-${KV}-${SRCDATE}.zip"
+DOWNLOADMACHINE = "${MACHINE}"
+
+SRC_URI = "http://downloads.mutant-digital.net/maxytec/${MACHINE}/${MACHINE}-drivers-${KV}-${SRCDATE}.zip"
 
 SRC_URI_append = " file://suspend.sh"
 
@@ -51,13 +55,11 @@ inherit update-rc.d
 do_install_append() {
 	install -d ${D}${sysconfdir}/init.d
 	install -d ${D}${bindir}
-	install -m 0755 ${S}/suspend.sh ${D}${sysconfdir}/init.d/suspend
+	install -m 0755 ${S}/suspend.sh ${D}${sysconfdir}/init.d
 	install -m 0755 ${S}/turnoff_power ${D}${bindir}
 }
 
 do_package_qa() {
 }
 
-
 FILES_${PN} += " ${bindir} ${sysconfdir}/init.d"
-
