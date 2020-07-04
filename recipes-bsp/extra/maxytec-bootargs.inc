@@ -7,9 +7,9 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit deploy
 
-DOWNLOADMACHINE = "${MACHINE}"
+MACHINETYPE = "${MACHINE}"
 
-SRC_URI = "http://downloads.mutant-digital.net/maxytec/${DOWNLOADMACHINE}/${DOWNLOADMACHINE}-bootargs-${SRCDATE}.zip"
+SRC_URI = "http://downloads.mutant-digital.net/maxytec/${MACHINETYPE}/${MACHINETYPE}-bootargs-${SRCDATE}.zip"
 
 S = "${WORKDIR}"
 

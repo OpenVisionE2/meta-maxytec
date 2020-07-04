@@ -7,4 +7,4 @@ SRC_URI[sha256sum] = "fdddd597296f909154dd4bc99ffe21b3e0efd1ddfd13c27781a83db524
 
 COMPATIBLE_MACHINE = "^(multiboxplus)$"
 
-DOWNLOADMACHINE = "plus"
+MACHINETYPE = "plus"

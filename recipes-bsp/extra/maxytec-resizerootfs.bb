@@ -1,7 +1,7 @@
 DESCRIPTION = "MaxyTec resize rootfs"
 require conf/license/license-gplv2.inc
 
-COMPATIBLE_MACHINE = "^(multibox)$"
+COMPATIBLE_MACHINE = "^(multibox|multiboxplus)$"
 
 RDEPENDS_${PN} = "e2fsprogs-resize2fs"
 

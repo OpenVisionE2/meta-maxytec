@@ -7,7 +7,7 @@ SRC_URI[sha256sum] = "fa334396eef8d37f0c57163afb08a2f8deb1010c77bec34bbc3089f7e8
 
 COMPATIBLE_MACHINE = "^(multiboxplus)$"
 
-DOWNLOADMACHINE = "plus"
+MACHINETYPE = "plus"
 
 do_configure[noexec] = "1"
 
