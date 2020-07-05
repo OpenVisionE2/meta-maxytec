@@ -7,8 +7,6 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit deploy
 
-MACHINETYPE = "${MACHINE}"
-
 SRC_URI = "http://downloads.mutant-digital.net/maxytec/${MACHINETYPE}/${MACHINETYPE}-recovery-${SRCDATE}.zip"
 
 S = "${WORKDIR}"

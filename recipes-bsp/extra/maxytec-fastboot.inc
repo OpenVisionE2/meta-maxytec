@@ -7,8 +7,6 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit deploy
 
-MACHINETYPE = "${MACHINE}"
-
 SRC_URI = "http://downloads.mutant-digital.net/maxytec/${MACHINETYPE}/${MACHINETYPE}-fastboot-${SRCDATE}.zip"
 
 S = "${WORKDIR}"

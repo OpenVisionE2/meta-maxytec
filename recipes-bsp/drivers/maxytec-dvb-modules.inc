@@ -10,8 +10,6 @@ KV = "4.4.35"
 
 PV = "${KV}+${SRCDATE}"
 
-MACHINETYPE = "${MACHINE}"
-
 SRC_URI = "http://downloads.mutant-digital.net/maxytec/${MACHINETYPE}/${MACHINETYPE}-drivers-${KV}-${SRCDATE}.zip"
 
 SRC_URI_append = " file://suspend.sh"
