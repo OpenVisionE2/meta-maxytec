@@ -12,26 +12,29 @@ PV = "${KV}+${SRCDATE}"
 
 SRC_URI = "http://downloads.mutant-digital.net/maxytec/${MACHINETYPE}/${MACHINETYPE}-drivers-${KV}-${SRCDATE}.zip"
 
-SRC_URI_append = " file://suspend.sh"
-
 S = "${WORKDIR}"
 
 INHIBIT_PACKAGE_STRIP = "1"
 
-FILES_${PN} += "${sysconfdir}/modules-load.d/_${MACHINE}.conf /lib/modules/${KV}/extra"
+inherit module
+
+FILES_${PN} += "${sysconfdir}/modules-load.d/_${MACHINE}.conf /lib/modules/${KV}/extra ${bindir} ${sysconfdir}/init.d"
 
 do_compile() {
 }
+
 do_populate_sysroot() {
 }
 
 do_install() {
 	install -d ${D}/lib/modules/${KV}/extra
-	install -d ${D}/${sysconfdir}/modules-load.d
+	install -d ${D}${sysconfdir}/modules-load.d
 	install -m 0755 ${S}/*.ko ${D}${nonarch_base_libdir}/modules/${KV}/extra
-	for i in ${MACHINE}_1 ${MACHINE}_2 ${MACHINE}_3 ${MACHINE}_4; do
-		echo $i >> ${D}/${sysconfdir}/modules-load.d/_${MACHINE}.conf
+	for i in ${MACHINETYPE}_1 ${MACHINETYPE}_2 ${MACHINETYPE}_3 ${MACHINETYPE}_4; do
+		echo $i >> ${D}${sysconfdir}/modules-load.d/_${MACHINE}.conf
 	done
+	install -d ${D}${bindir}
+	install -m 0755 ${S}/turnoff_power ${D}${bindir}
 }
 
 pkg_prerm_${PN}() {
@@ -50,14 +53,12 @@ INITSCRIPT_NAME = "suspend"
 INITSCRIPT_PARAMS = "start 89 0 ."
 inherit update-rc.d
 
+do_configure[noexec] = "1"
+
 do_install_append() {
 	install -d ${D}${sysconfdir}/init.d
-	install -d ${D}${bindir}
-	install -m 0755 ${S}/suspend.sh ${D}${sysconfdir}/init.d
-	install -m 0755 ${S}/turnoff_power ${D}${bindir}
+	install -m 0755 ${S}/suspend ${D}${sysconfdir}/init.d
 }
 
 do_package_qa() {
 }
-
-FILES_${PN} += " ${bindir} ${sysconfdir}/init.d"

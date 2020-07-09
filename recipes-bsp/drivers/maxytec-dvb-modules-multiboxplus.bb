@@ -9,8 +9,6 @@ COMPATIBLE_MACHINE = "^(multiboxplus)$"
 
 MACHINETYPE = "plus"
 
-do_configure[noexec] = "1"
-
 # Generate a simplistic standard init script
 do_compile_append () {
 	cat > suspend << EOF

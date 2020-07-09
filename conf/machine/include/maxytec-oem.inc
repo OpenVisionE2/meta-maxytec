@@ -7,17 +7,17 @@ DVBPROVIDER = "kernel"
 DVBSKYPROVIDER = "kernel"
 
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "\
-    ${@bb.utils.contains('MACHINE_FEATURES', 'emmc', 'maxytec-resizerootfs partitions-by-name' , '', d)} \
-    ${@bb.utils.contains('MACHINE_FEATURES', 'adwol', 'maxytec-ethwol' , '', d)} \
-    "
+	${@bb.utils.contains('MACHINE_FEATURES', 'emmc', 'maxytec-resizerootfs partitions-by-name' , '', d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'adwol', 'maxytec-ethwol' , '', d)} \
+	"
 
 MACHINE_EXTRA_RRECOMMENDS += " \
-    gstreamer1.0-plugin-dvbmediasink \
-    "
+	gstreamer1.0-plugin-dvbmediasink \
+	"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
-    maxytec-dvb-modules-${MACHINE} \
-    "
+	maxytec-dvb-modules-${MACHINE} \
+	"
 
 KERNEL_MODULE_AUTOLOAD += "xfs"
 

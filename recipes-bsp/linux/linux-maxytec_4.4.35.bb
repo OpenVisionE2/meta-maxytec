@@ -75,3 +75,6 @@ pkg_postinst_kernel-image() {
 
 do_rm_work() {
 }
+
+export KCFLAGS = "-Wno-error=missing-attributes \
+                  "
