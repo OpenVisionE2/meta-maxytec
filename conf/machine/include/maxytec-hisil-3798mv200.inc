@@ -44,7 +44,5 @@ MTD_BLACK  = "mmcblk0"
 KERNEL_FILE = "uImage"
 ROOTFS_FILE = "rootfs.tar.bz2"
 
-IMAGEDIRRECOVERY ?= "${MACHINE}-recovery"
-
 require conf/machine/include/tune-cortexa15.inc
 require conf/machine/include/maxytec-oem.inc
