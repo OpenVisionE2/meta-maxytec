@@ -5,6 +5,8 @@ LICENSE = "CLOSED"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
+PV = "${SRCDATE}"
+
 inherit deploy
 
 SRC_URI = "http://downloads.mutant-digital.net/maxytec/multibox/multibox-param-${SRCDATE}.zip"
