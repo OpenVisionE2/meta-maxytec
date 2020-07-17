@@ -16,9 +16,7 @@ S = "${WORKDIR}"
 
 INHIBIT_PACKAGE_STRIP = "1"
 
-inherit module
-
-FILES_${PN} += "${sysconfdir}/modules-load.d/_${MACHINE}.conf /lib/modules/${KV}/extra ${bindir} ${sysconfdir}/init.d"
+FILES_${PN} = "/"
 
 do_compile() {
 }
@@ -27,7 +25,7 @@ do_populate_sysroot() {
 }
 
 do_install() {
-	install -d ${D}/lib/modules/${KV}/extra
+	install -d ${D}${base_libdir}/modules/${KV}/extra
 	install -d ${D}${sysconfdir}/modules-load.d
 	install -m 0755 ${S}/*.ko ${D}${nonarch_base_libdir}/modules/${KV}/extra
 	for i in ${MACHINETYPE}_1 ${MACHINETYPE}_2 ${MACHINETYPE}_3 ${MACHINETYPE}_4; do
@@ -39,8 +37,8 @@ do_install() {
 
 pkg_prerm_${PN}() {
 	if [ "x$D" == "x" ]; then
-		if [ -f /lib/modules/${KV}/extra/hi_play.ko ] ; then
-			rm -f /lib/modules/${KV}/extra/hi_play.ko;
+		if [ -f ${base_libdir}/modules/${KV}/extra/hi_play.ko ] ; then
+			rm -f ${base_libdir}/modules/${KV}/extra/hi_play.ko;
 		fi
 	fi
 }
