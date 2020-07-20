@@ -8,10 +8,10 @@ DVBSKYPROVIDER = "kernel"
 
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "\
 	${@bb.utils.contains('MACHINE_FEATURES', 'emmc', 'maxytec-resizerootfs partitions-by-name' , '', d)} \
-	${@bb.utils.contains('MACHINE_FEATURES', 'adwol', 'maxytec-ethwol' , '', d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'wol', 'maxytec-ethwol' , '', d)} \
 	"
 
-MACHINE_EXTRA_RRECOMMENDS += " \
+MACHINE_EXTRA_RRECOMMENDS += "\
 	gstreamer1.0-plugin-dvbmediasink \
 	"
 
@@ -23,7 +23,7 @@ KERNEL_MODULE_AUTOLOAD += "xfs"
 
 require conf/machine/include/soc-family.inc
 
-MACHINE_FEATURES += "alsa hdmicec switchoff hisil-3798mv200 mali emmc multitranscoding himedia blindscan-dvbs dvb-c adwol fastboot hisil"
+MACHINE_FEATURES += "alsa hdmicec switchoff hisil-3798mv200 mali emmc multitranscoding himedia blindscan-dvbs dvb-c wol fastboot hisil HDMI"
 
 SOC_FAMILY = "hisi3798mv200"
 HICHIPSET = "3798mv200"

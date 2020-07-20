@@ -1,6 +1,6 @@
 DISTRO_FEATURES_append += "opengl"
 
-DISTRO_FEATURES_remove = "x11 wayland directfb"
+DISTRO_FEATURES_remove += "x11 wayland directfb"
 
 PREFERRED_PROVIDER_virtual/egl ?= "maxytec-mali-${HICHIPSET}"
 PREFERRED_PROVIDER_virtual/libgles1 ?= "maxytec-mali-${HICHIPSET}"
@@ -23,7 +23,7 @@ MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "\
 	${@bb.utils.contains('MACHINE_FEATURES', 'bluetooth', 'kernel-module-btusb bluez5' , '', d)} \
 	"
 
-MACHINE_EXTRA_RRECOMMENDS += " \
+MACHINE_EXTRA_RRECOMMENDS += "\
 	ffmpeg \
 	"
 
@@ -36,7 +36,7 @@ KERNEL_MODULE_AUTOLOAD += "mali"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-maxytec"
 PREFERRED_VERSION_linux-maxytec = "4.4.35"
-PREFERRED_PROVIDER_virtual/enigma2-mediaservice ?= "enigma2-plugin-systemplugins-servicehisilicon"
+PREFERRED_PROVIDER_virtual/enigma2-mediaservice = "enigma2-plugin-systemplugins-servicehisilicon"
 
 MTD_ROOTFS = "mmcblk0p20"
 MTD_KERNEL = "mmcblk0p19"
