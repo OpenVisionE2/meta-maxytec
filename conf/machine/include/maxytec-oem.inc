@@ -27,6 +27,8 @@ MACHINE_FEATURES += "alsa hdmicec switchoff hisil-3798mv200 mali emmc multitrans
 
 SOC_FAMILY = "hisi3798mv200"
 HICHIPSET = "3798mv200"
+CHIPSET = "Hi3798Mv200"
+
 RCTYPE = "0"
 
 MTD_ROOTFS = "mmcblk0p21"
