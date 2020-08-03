@@ -19,7 +19,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	maxytec-dvb-modules-${MACHINE} \
 	"
 
-KERNEL_MODULE_AUTOLOAD += "xfs"
 
 require conf/machine/include/soc-family.inc
 
