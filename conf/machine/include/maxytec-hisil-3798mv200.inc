@@ -1,4 +1,4 @@
-DISTRO_FEATURES_append += "opengl"
+DISTRO_FEATURES_append = " opengl"
 
 DISTRO_FEATURES_remove += "x11 wayland directfb"
 
