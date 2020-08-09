@@ -19,7 +19,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	maxytec-dvb-modules-${MACHINE} \
 	"
 
-
 require conf/machine/include/soc-family.inc
 
 MACHINE_FEATURES += "alsa hdmicec switchoff hisil-3798mv200 mali emmc multitranscoding himedia blindscan-dvbs dvb-c wol fastboot hisil HDMI"
