@@ -24,7 +24,7 @@ do_populate_sysroot() {
 }
 
 do_install() {
-	install -d ${D}${base_libdir}/modules/${KV}/extra
+	install -d ${D}${nonarch_base_libdir}/modules/${KV}/extra
 	install -d ${D}${sysconfdir}/modules-load.d
 	install -m 0755 ${S}/*.ko ${D}${nonarch_base_libdir}/modules/${KV}/extra
 	for i in ${MACHINETYPE}_1 ${MACHINETYPE}_2 ${MACHINETYPE}_3 ${MACHINETYPE}_4; do
@@ -36,8 +36,8 @@ do_install() {
 
 pkg_prerm_${PN}() {
 	if [ "x$D" == "x" ]; then
-		if [ -f ${base_libdir}/modules/${KV}/extra/hi_play.ko ] ; then
-			rm -f ${base_libdir}/modules/${KV}/extra/hi_play.ko;
+		if [ -f ${nonarch_base_libdir}/modules/${KV}/extra/hi_play.ko ] ; then
+			rm -f ${nonarch_base_libdir}/modules/${KV}/extra/hi_play.ko;
 		fi
 	fi
 }
