@@ -3,8 +3,6 @@ SECTION = "base"
 PRIORITY = "required"
 LICENSE = "CLOSED"
 
-PACKAGE_ARCH = "${MACHINE_ARCH}"
-
 SRC_URI = ""
 
 # Generate a mali rules script
