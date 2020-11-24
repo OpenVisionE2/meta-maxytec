@@ -17,7 +17,7 @@ PREFERRED_PROVIDER_virtual/blindscan-dvbs = "maxytec-dvb-modules-${MACHINE}"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	${@bb.utils.contains('MACHINE_FEATURES', 'hisil-${HICHIPSET}', 'maxytec-bootlogo-${HICHIPSET} maxytec-libs-${HICHIPSET} maxytec-param-${HICHIPSET} maxytec-bootargs-${MACHINE} maxytec-fastboot-${MACHINE}' , '', d)} \
-	${@bb.utils.contains('MACHINE_FEATURES', 'hisi-recovery', 'maxytec-recovery-${MACHINE}' , '', d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'hisil-recovery', 'maxytec-recovery-${MACHINE}' , '', d)} \
 	maxytec-dvb-modules-${MACHINE} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'mali', 'maxytec-mali-${HICHIPSET} kernel-module-mali-${HICHIPSET}' , '', d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'bluetooth', 'kernel-module-btusb bluez5' , '', d)} \
