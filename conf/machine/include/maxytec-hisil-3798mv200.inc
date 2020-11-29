@@ -89,3 +89,7 @@ IMAGE_CMD_maxytecfastboot8gb_append = " \
 	cd ..; \
 	rm -Rf ${DEPLOY_DIR_IMAGE}/${MACHINE}; \
 	"
+
+IMAGE_CMD_prepend = "\
+	rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
+	"
