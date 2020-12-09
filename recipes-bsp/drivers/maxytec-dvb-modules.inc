@@ -21,9 +21,6 @@ FILES_${PN} = "/"
 do_compile() {
 }
 
-do_populate_sysroot() {
-}
-
 do_install() {
 	install -d ${D}${nonarch_base_libdir}/modules/${KV}/extra
 	install -d ${D}${sysconfdir}/modprobe.d
