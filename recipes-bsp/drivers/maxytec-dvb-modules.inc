@@ -6,10 +6,11 @@ require conf/license/license-close.inc
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
+PROVIDES = "virtual/blindscan-dvbs"
 
 PV = "${KV}+${SRCDATE}"
 
-SRC_URI = "http://downloads.mutant-digital.net/maxytec/${MACHINETYPE}/${MACHINETYPE}-drivers-${KV}-${SRCDATE}.zip"
+SRC_URI = "http://downloads.mutant-digital.net/maxytec/${MACHINE}/${MACHINE}-drivers-${KV}-${SRCDATE}.zip"
 
 S = "${WORKDIR}"
 
@@ -25,10 +26,10 @@ do_populate_sysroot() {
 
 do_install() {
 	install -d ${D}${nonarch_base_libdir}/modules/${KV}/extra
-	install -d ${D}${sysconfdir}/modules-load.d
+	install -d ${D}${sysconfdir}/modprobe.d
 	install -m 0755 ${S}/*.ko ${D}${nonarch_base_libdir}/modules/${KV}/extra
-	for i in ${MACHINETYPE}_1 ${MACHINETYPE}_2 ${MACHINETYPE}_3 ${MACHINETYPE}_4; do
-		echo $i >> ${D}${sysconfdir}/modules-load.d/_${MACHINE}.conf
+	for i in ${MACHINE}_1 ${MACHINE}_2 ${MACHINE}_3 ${MACHINE}_4; do
+		echo blacklist $i >> ${D}${sysconfdir}/modprobe.d/${MACHINE}.conf
 	done
 	install -d ${D}${bindir}
 	install -m 0755 ${S}/turnoff_power ${D}${bindir}

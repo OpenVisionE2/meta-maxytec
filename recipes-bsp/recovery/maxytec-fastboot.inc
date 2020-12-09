@@ -9,7 +9,7 @@ PV = "${SRCDATE}"
 
 inherit deploy
 
-SRC_URI = "http://downloads.mutant-digital.net/maxytec/${MACHINETYPE}/${MACHINETYPE}-fastboot-${SRCDATE}.zip"
+SRC_URI = "http://downloads.mutant-digital.net/maxytec/${MACHINE}/${MACHINE}-fastboot-${SRCDATE}.zip"
 
 S = "${WORKDIR}"
 
@@ -18,7 +18,7 @@ do_configure[nostamp] = "1"
 
 do_deploy() {
     install -d ${DEPLOY_DIR_IMAGE}/maxytec-partitions-${MACHINE}/${MACHINE}
-    install -m 0755 ${WORKDIR}/${MACHINETYPE}/fastboot.bin ${DEPLOY_DIR_IMAGE}/maxytec-partitions-${MACHINE}/${MACHINE}
+    install -m 0755 ${WORKDIR}/${MACHINE}/fastboot.bin ${DEPLOY_DIR_IMAGE}/maxytec-partitions-${MACHINE}/${MACHINE}
 }
 
 addtask deploy before do_build after do_install

@@ -4,7 +4,7 @@ PRIORITY = "required"
 LICENSE = "CLOSED"
 require conf/license/license-close.inc
 
-COMPATIBLE_MACHINE = "^(multibox|multiboxplus)$"
+COMPATIBLE_MACHINE = "^(multibox|multiboxse)$"
 
 SRCDATE = "20200528"
 

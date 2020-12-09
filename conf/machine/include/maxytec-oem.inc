@@ -17,4 +17,5 @@ DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts --with-eac3 -
 
 EXTRA_ALSA = "mv200"
 
+RCTYPE = "27"
 RCNAME = "maxytec1"

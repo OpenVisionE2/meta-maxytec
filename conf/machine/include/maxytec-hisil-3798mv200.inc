@@ -4,11 +4,11 @@ DISTRO_FEATURES_remove += "x11 wayland directfb"
 
 KERNELVERSION = "4.4.35"
 
-PREFERRED_PROVIDER_virtual/egl ?= "maxytec-mali-${HICHIPSET}"
-PREFERRED_PROVIDER_virtual/libgles1 ?= "maxytec-mali-${HICHIPSET}"
-PREFERRED_PROVIDER_virtual/libgles2 ?= "maxytec-mali-${HICHIPSET}"
-PREFERRED_PROVIDER_virtual/libopencl ?= "maxytec-mali-${HICHIPSET}"
-PREFERRED_PROVIDER_virtual/libgbm ?= "maxytec-mali-${HICHIPSET}"
+PREFERRED_PROVIDER_virtual/egl ?= "maxytec-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libgles1 ?= "maxytec-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libgles2 ?= "maxytec-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libopencl ?= "maxytec-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libgbm ?= "maxytec-mali-${MACHINE}"
 PREFERRED_PROVIDER_virtual/libgl ?= "mesa"
 PREFERRED_PROVIDER_virtual/mesa ?= "mesa"
 
@@ -16,14 +16,20 @@ PREFERRED_PROVIDER_virtual/blindscan-dvbc = "maxytec-dvb-modules-${MACHINE}"
 PREFERRED_PROVIDER_virtual/blindscan-dvbs = "maxytec-dvb-modules-${MACHINE}"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
-	${@bb.utils.contains('MACHINE_FEATURES', 'hisil-${HICHIPSET}', 'maxytec-bootlogo-${HICHIPSET} maxytec-libs-${HICHIPSET} maxytec-param-${HICHIPSET} maxytec-bootargs-${MACHINE} maxytec-fastboot-${MACHINE}' , '', d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'hisil-${HICHIPSET}', 'maxytec-bootlogo-${MACHINE} maxytec-libs-${MACHINE} maxytec-param-${MACHINE} maxytec-bootargs-${MACHINE} maxytec-fastboot-${MACHINE}' , '', d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'hisil-recovery', 'maxytec-recovery-${MACHINE}' , '', d)} \
 	maxytec-dvb-modules-${MACHINE} \
-	${@bb.utils.contains('MACHINE_FEATURES', 'mali', 'maxytec-mali-${HICHIPSET} kernel-module-mali-${HICHIPSET}' , '', d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'mali', 'maxytec-mali-${MACHINE} kernel-module-mali-${MACHINE}' , '', d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'bluetooth', 'kernel-module-btusb bluez5' , '', d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'emmc', 'maxytec-resizerootfs partitions-by-name' , '', d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'wol', 'maxytec-ethwol' , '', d)} \
 	gstreamer1.0-plugin-dvbmediasink \
+	firmware-rt2870 \
+	firmware-rtl8192cu \
+	kernel-module-extrawlan-rtl8192fu \
+	kernel-module-extrawlan-rt8188fu \
+	kernel-module-rt2800usb \
+	kernel-module-rtl8192cu \
 	"
 
 DVBPROVIDER = "kernel"

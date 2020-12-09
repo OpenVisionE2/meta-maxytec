@@ -9,7 +9,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 PV = "${SRCDATE}"
 
-SRC_URI = "http://downloads.mutant-digital.net/maxytec/multibox/multibox-libs-${SRCDATE}.zip"
+SRC_URI = "http://downloads.mutant-digital.net/maxytec/${MACHINE}/${MACHINE}-libs-${SRCDATE}.zip"
 
 S = "${WORKDIR}"
 

@@ -9,7 +9,7 @@ PV = "${SRCDATE}"
 
 inherit deploy
 
-SRC_URI = "http://downloads.mutant-digital.net/maxytec/multibox/multibox-logo-${SRCDATE}.zip"
+SRC_URI = "http://downloads.mutant-digital.net/maxytec/${MACHINE}/${MACHINE}-logo-${SRCDATE}.zip"
 
 S = "${WORKDIR}"
 
