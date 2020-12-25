@@ -77,6 +77,8 @@ IMAGE_CMD_maxytecfastboot8gb_append = " \
 	echo "The ${IMAGE_NAME}_recovery_emmc.zip should been install normally once (or if there is an update.)" >>${DEPLOY_DIR_IMAGE}/${IMAGEDIRRECOVERY}/recovery_${MACHINE}_READ.ME; \
 	echo "This is needed for avoid images conflicts as the partition layout (bootargs) is of huge essential." >>${DEPLOY_DIR_IMAGE}/${IMAGEDIRRECOVERY}/recovery_${MACHINE}_READ.ME; \
 	echo "A small change can destroy all your install images. So we can better leave it and not install it if it's not need." >>${DEPLOY_DIR_IMAGE}/${IMAGEDIRRECOVERY}/recovery_${MACHINE}_READ.ME; \
+	echo "${IMAGE_NAME}" > ${DEPLOY_DIR_IMAGE}/${IMAGEDIRRECOVERY}/imageversion; \
+	echo "https://forum.openvision.tech/app.php/donate" > ${DEPLOY_DIR_IMAGE}/${IMAGEDIRRECOVERY}/donate.txt; \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.zip; \
 	cd ${DEPLOY_DIR_IMAGE}/${IMAGEDIRRECOVERY} ; \
 	zip -r ../${IMAGE_NAME}_recovery_emmc.zip *; \
@@ -87,7 +89,7 @@ IMAGE_CMD_maxytecfastboot8gb_append = " \
 	mv -f ${DEPLOY_DIR_IMAGE}/rootfs.tar ${DEPLOY_DIR_IMAGE}/${MACHINE}/${IMAGEDIR}/rootfs.tar; \
 	bzip2 ${DEPLOY_DIR_IMAGE}/${MACHINE}/${IMAGEDIR}/rootfs.tar; \
 	echo "${IMAGE_NAME}" > ${DEPLOY_DIR_IMAGE}/${MACHINE}/${IMAGEDIR}/imageversion; \
-	echo "https://forum.openvision.tech/app.php/donate" > ${DEPLOY_DIR_IMAGE}/${MACHINE/${IMAGEDIR}/donate.txt; \
+	echo "https://forum.openvision.tech/app.php/donate" > ${DEPLOY_DIR_IMAGE}/${MACHINE}/${IMAGEDIR}/donate.txt; \
 	echo "${IMAGE_NAME}_usb.zip" > ${DEPLOY_DIR_IMAGE}/${MACHINE}/unforce_${MACHINE}.txt; \
 	echo "Rename the unforce_${MACHINE}.txt to force_${MACHINE}.txt and move it to the root of your usb-stick" > ${DEPLOY_DIR_IMAGE}/${MACHINE}/${IMAGEDIR}/force_${MACHINE}_READ.ME; \
 	echo "When you enter the recovery menu then it will force to install the image ${IMAGE_NAME}_usb.zip in the linux1 selection" >> ${DEPLOY_DIR_IMAGE}/${MACHINE}/${IMAGEDIR}/force_${MACHINE}_READ.ME; \
@@ -95,6 +97,7 @@ IMAGE_CMD_maxytecfastboot8gb_append = " \
 	zip -r ../${IMAGE_NAME}_usb.zip *; \
 	cd ..; \
 	rm -Rf ${DEPLOY_DIR_IMAGE}/${MACHINE}; \
+	rm -Rf ${DEPLOY_DIR_IMAGE}/maxytec-partitions-${MACHINE}; \
 	"
 
 IMAGE_CMD_prepend = "\
