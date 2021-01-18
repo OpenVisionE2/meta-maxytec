@@ -23,7 +23,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	${@bb.utils.contains('MACHINE_FEATURES', 'bluetooth', 'kernel-module-btusb bluez5' , '', d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'emmc', 'maxytec-resizerootfs partitions-by-name' , '', d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'wol', 'maxytec-ethwol' , '', d)} \
-	gstreamer1.0-plugin-dvbmediasink \
 	firmware-rt2870 \
 	firmware-rtl8192cu \
 	kernel-module-extrawlan-rtl8192fu \
