@@ -20,7 +20,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	${@bb.utils.contains('MACHINE_FEATURES', 'hisil-recovery', 'maxytec-recovery-${MACHINE}' , '', d)} \
 	maxytec-dvb-modules-${MACHINE} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'mali', 'maxytec-mali-${MACHINE} kernel-module-mali-${MACHINE}' , '', d)} \
-	${@bb.utils.contains('MACHINE_FEATURES', 'bluetooth', 'kernel-module-btusb bluez5' , '', d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'emmc', 'maxytec-resizerootfs partitions-by-name' , '', d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'wol', 'maxytec-ethwol' , '', d)} \
 	firmware-rt2870 \
