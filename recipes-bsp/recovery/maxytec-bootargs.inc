@@ -17,10 +17,9 @@ ALLOW_EMPTY_${PN} = "1"
 do_configure[nostamp] = "1"
 
 do_deploy() {
-    install -d ${DEPLOY_DIR_IMAGE}/maxytec-partitions-${MACHINE}/${MACHINE}
-    install -m 0755 ${WORKDIR}/update_bootargs_${MACHINE}.bin ${DEPLOY_DIR_IMAGE}/maxytec-partitions-${MACHINE}
-    install -m 0755 ${WORKDIR}/${MACHINE}/bootargs-8gb.bin ${DEPLOY_DIR_IMAGE}/maxytec-partitions-${MACHINE}/${MACHINE}
+	install -d ${DEPLOY_DIR_IMAGE}/maxytec-partitions-${MACHINE}/${MACHINE}
+	install -m 0755 ${WORKDIR}/update_bootargs_${MACHINE}.bin ${DEPLOY_DIR_IMAGE}/maxytec-partitions-${MACHINE}
+	install -m 0755 ${WORKDIR}/${MACHINE}/bootargs-8gb.bin ${DEPLOY_DIR_IMAGE}/maxytec-partitions-${MACHINE}/${MACHINE}
 }
 
 addtask deploy before do_build after do_install
-

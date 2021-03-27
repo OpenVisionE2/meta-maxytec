@@ -36,9 +36,7 @@ do_install() {
 	fi
 }
 
-
 do_package_qa() {
 }
 
 FILES_${PN} = "${libdir}/hisilicon/*"
-
