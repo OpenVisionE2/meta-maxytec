@@ -18,9 +18,6 @@ INHIBIT_PACKAGE_STRIP = "1"
 
 FILES_${PN} = "/"
 
-do_compile() {
-}
-
 do_install() {
 	install -d ${D}${nonarch_base_libdir}/modules/${KV}/extra
 	install -d ${D}${sysconfdir}/modprobe.d
@@ -56,4 +53,21 @@ do_install_append() {
 }
 
 do_package_qa() {
+}
+
+# Generate a simplistic standard init script
+do_compile () {
+	cat > suspend << EOF
+#!/bin/sh
+
+runlevel=runlevel | cut -d' ' -f2
+
+if [ "\$runlevel" != "0" ] ; then
+	exit 0
+fi
+
+mount -t sysfs sys /sys
+
+/usr/bin/turnoff_power
+EOF
 }
