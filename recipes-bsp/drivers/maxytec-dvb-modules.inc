@@ -48,8 +48,8 @@ inherit update-rc.d
 do_configure[noexec] = "1"
 
 do_install_append() {
-	install -d ${D}${sysconfdir}/init.d
-	install -m 0755 ${S}/suspend ${D}${sysconfdir}/init.d
+	install -d ${D}${INIT_D_DIR}
+	install -m 0755 ${S}/suspend ${D}${INIT_D_DIR}
 }
 
 do_package_qa() {
