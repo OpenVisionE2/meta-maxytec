@@ -30,7 +30,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	kernel-module-rtl8192cu \
 	"
 
-DVBSKYPROVIDER = "kernel"
 
 TARGET_ARCH = "arm"
 DEFAULTTUNE = "cortexa15hf-neon-vfpv4"
