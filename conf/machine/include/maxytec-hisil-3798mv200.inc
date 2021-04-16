@@ -30,7 +30,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	kernel-module-rtl8192cu \
 	"
 
-DVBPROVIDER = "kernel"
 DVBSKYPROVIDER = "kernel"
 
 TARGET_ARCH = "arm"
