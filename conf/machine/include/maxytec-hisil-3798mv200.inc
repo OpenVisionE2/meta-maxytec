@@ -4,11 +4,11 @@ DISTRO_FEATURES_remove += "x11 wayland directfb"
 
 KERNELVERSION = "4.4.35"
 
-PREFERRED_PROVIDER_virtual/egl ?= "maxytec-mali-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libgles1 ?= "maxytec-mali-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libgles2 ?= "maxytec-mali-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libopencl ?= "maxytec-mali-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libgbm ?= "maxytec-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/egl = "maxytec-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libgles1 = "maxytec-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libgles2 = "maxytec-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libopencl = "maxytec-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libgbm = "maxytec-mali-${MACHINE}"
 PREFERRED_PROVIDER_virtual/libgl ?= "mesa"
 PREFERRED_PROVIDER_virtual/mesa ?= "mesa"
 
@@ -22,12 +22,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	${@bb.utils.contains('MACHINE_FEATURES', 'mali', 'maxytec-mali-${MACHINE} kernel-module-mali-${MACHINE}' , '', d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'emmc', 'maxytec-resizerootfs partitions-by-name' , '', d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'wol', 'maxytec-ethwol' , '', d)} \
-	firmware-rt2870 \
-	firmware-rtl8192cu \
-	kernel-module-extrawlan-rtl8192fu \
-	kernel-module-extrawlan-rt8188fu \
-	kernel-module-rt2800usb \
-	kernel-module-rtl8192cu \
 	"
 
 
