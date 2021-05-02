@@ -1,6 +1,6 @@
 DISTRO_FEATURES_append = " opengl"
 
-DISTRO_FEATURES_remove += "x11 wayland directfb"
+DISTRO_FEATURES_remove += "x11 wayland"
 
 KERNELVERSION = "4.4.35"
 
