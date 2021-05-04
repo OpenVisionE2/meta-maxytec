@@ -1,14 +1,10 @@
-DISTRO_FEATURES_append = " opengl"
-
-DISTRO_FEATURES_remove += "x11 wayland"
-
 KERNELVERSION = "4.4.35"
 
-PREFERRED_PROVIDER_virtual/egl = "maxytec-mali-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libgles1 = "maxytec-mali-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libgles2 = "maxytec-mali-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libopencl = "maxytec-mali-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libgbm = "maxytec-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/egl ?= "maxytec-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libgles1 ?= "maxytec-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libgles2 ?= "maxytec-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libopencl ?= "maxytec-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libgbm ?= "maxytec-mali-${MACHINE}"
 PREFERRED_PROVIDER_virtual/libgl ?= "mesa"
 PREFERRED_PROVIDER_virtual/mesa ?= "mesa"
 
@@ -93,3 +89,5 @@ IMAGE_CMD_maxytecfastboot8gb_append = " \
 IMAGE_CMD_prepend = "\
 	rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
 	"
+
+KODIEXTSETTINGS = ""

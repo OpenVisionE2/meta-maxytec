@@ -5,7 +5,7 @@ BOX_BRAND = "maxytec"
 
 require conf/machine/include/soc-family.inc
 
-MACHINE_FEATURES += "alsa hdmicec switchoff hisil-${HICHIPSET} mali emmc multitranscoding blindscan-dvbs dvb-c wol fastboot hisil HDMI hisil-recovery mountboot"
+MACHINE_FEATURES += "alsa hdmicec switchoff hisil-${HICHIPSET} mali emmc multitranscoding blindscan-dvbs dvb-c wol fastboot hisil HDMI hisil-recovery mountboot kodi19"
 
 SOC_FAMILY = "hisi3798mv200"
 HICHIPSET = "3798mv200"
