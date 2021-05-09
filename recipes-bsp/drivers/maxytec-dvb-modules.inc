@@ -37,7 +37,7 @@ pkg_prerm_${PN}() {
 	fi
 }
 
-RDEPENDS_${PN} = "libjpeg-turbo"
+RDEPENDS_${PN} = "libjpeg-turbo pulseaudio-lib-rtp"
 PROVIDES += "virtual/blindscan-dvbc virtual/blindscan-dvbs"
 RPROVIDES_${PN} += "virtual/blindscan-dvbc virtual/blindscan-dvbs"
 
